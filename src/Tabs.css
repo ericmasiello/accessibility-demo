@@ -1,0 +1,25 @@
+.tablist {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 2rem;
+}
+
+.tablist > .tab {
+  margin-bottom: -1px;
+}
+
+.tab {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.tab--selected {
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
