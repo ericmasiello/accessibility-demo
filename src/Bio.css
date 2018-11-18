@@ -1,0 +1,9 @@
+.bio {
+}
+
+.bio__photo {
+  max-width: 40rem;
+  max-height: 40rem;
+  display: block;
+  margin-bottom: 1rem;
+}

@@ -16,6 +16,10 @@
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   text-decoration: none;
+  color: #1766b5;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: transparent;
 }
 
 .tab--selected {
