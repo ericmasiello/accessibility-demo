@@ -1,9 +1,19 @@
-.bio {
-}
-
-.bio__photo {
+.bio-photo {
   max-width: 40rem;
   max-height: 40rem;
   display: block;
   margin-bottom: 1rem;
+}
+
+.bio {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.bio__label {
+  font-weight: 600;
+}
+
+.bio__item {
+  margin: 0 0 1.5rem;
 }

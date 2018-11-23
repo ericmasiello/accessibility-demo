@@ -14,7 +14,7 @@ const team = [
     photoDesc: 'Eric dressed in a gray suit',
     employment: '2.5 years',
     bio:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Eric joined the Diamond Dogs when they were known as the Embellishmen. He helped developed the "embellishment layer" for Tower\'s template designers.',
   },
   {
     id: uuid(),
@@ -24,7 +24,7 @@ const team = [
     photoDesc: 'Evan sitting at his desk, smiling, holding an planner',
     employment: '2.5 years',
     bio:
-      'In egestas erat imperdiet sed euismod nisi porta lorem. Nunc vel risus commodo viverra maecenas accumsan lacus vel. Ac turpis egestas maecenas pharetra convallis posuere morbi. Pellentesque habitant morbi tristique senectus. Nunc lobortis mattis aliquam faucibus purus. Bibendum enim facilisis gravida neque convallis a cras semper. Nibh mauris cursus mattis molestie a iaculis. Et leo duis ut diam. Orci eu lobortis elementum nibh. Dignissim diam quis enim lobortis scelerisque. Non blandit massa enim nec dui nunc mattis. Nisi lacus sed viverra tellus in hac habitasse platea dictumst. A erat nam at lectus urna duis convallis convallis. Scelerisque fermentum dui faucibus in ornare quam viverra orci. Sapien eget mi proin sed libero. Tempus egestas sed sed risus pretium quam vulputate dignissim. Sit amet consectetur adipiscing elit ut aliquam purus sit. Faucibus purus in massa tempor nec. Est ullamcorper eget nulla facilisi etiam dignissim.',
+      'Evan and Noah were the original Embellishmen. Previously Evan worked on PAID.',
   },
   {
     id: uuid(),
@@ -34,7 +34,7 @@ const team = [
     photoDesc: 'David sitting at his desk staring intently',
     employment: '2.5 years',
     bio:
-      'Urna molestie at elementum eu. Nisl purus in mollis nunc sed id semper risus. Morbi non arcu risus quis varius quam. Luctus venenatis lectus magna fringilla urna porttitor rhoncus. Cursus vitae congue mauris rhoncus. Egestas diam in arcu cursus euismod quis viverra nibh.',
+      'David was a intern at Vistaprint before joining as a full time employee. He worked on Walking Devs beforing joining the Diamond Dogs 6 months ago.',
   },
   {
     id: uuid(),
@@ -45,17 +45,17 @@ const team = [
       'Greg leaning back in his desk chair with a sticker on his forehead that reads "Be Happy"',
     employment: '4 years',
     bio:
-      'Ultrices sagittis orci a scelerisque purus semper eget duis. Dignissim cras tincidunt lobortis feugiat vivamus. Elementum integer enim neque volutpat ac tincidunt vitae semper. Ut sem nulla pharetra diam sit amet nisl suscipit. A iaculis at erat pellentesque. At erat pellentesque adipiscing commodo.',
+      'Greg was a member of The Architects, one of the original Tower teams. He moved on, helping The Norms support DIFY before recently rejoining Tower development as a Diamond Dog.',
   },
   {
     id: uuid(),
     name: 'Avril',
-    hometown: 'Somewhere, MD',
+    hometown: 'USA',
     photo: avril,
     photoDesc: 'Avril writing on a whiteboard in an office',
-    employment: '3 months',
+    employment: '4 months',
     bio:
-      'Consectetur lorem donec massa sapien. Donec et odio pellentesque diam. Enim eu turpis egestas pretium aenean pharetra magna ac. Vulputate mi sit amet mauris. A diam sollicitudin tempor id eu nisl nunc. Eget dolor morbi non arcu risus quis varius quam quisque. Id diam maecenas ultricies mi. Congue eu consequat ac felis donec et odio. Massa eget egestas purus viverra accumsan in nisl nisi. Etiam sit amet nisl purus in mollis.',
+      'Avril only recently joined Vistaprint. She briefly worked on Legends of the Hidden Templates and joined Diamond Dogs a few weeks ago.',
   },
 ];
 

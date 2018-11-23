@@ -66,6 +66,9 @@ class TabManager extends React.Component {
         this.state.panelRef.current.focus();
         break;
       }
+      default: {
+        break;
+      }
     }
   };
 
@@ -128,17 +131,23 @@ export default class Tabs extends React.PureComponent {
                 <section
                   ref={tabState.panelRef}
                   role="tabpanel"
-                  className="bio"
                   tabIndex={0}
                   id={`${selectedMember.id}_panel`}
-                  aria-labelledby={`tab_${selectedMember.id}`}
+                  aria-label={selectedMember.name}
                 >
                   <img
-                    className="bio__photo"
+                    className="bio-photo"
                     src={selectedMember.photo}
                     alt={selectedMember.photoDesc}
                   />
-                  <p>{selectedMember.bio}</p>
+                  <dl className="bio">
+                    <dt className="bio__label">Hometown</dt>
+                    <dd className="bio__item">{selectedMember.hometown}</dd>
+                    <dt className="bio__label">Time at Vistaprint</dt>
+                    <dd className="bio__item">{selectedMember.employment}</dd>
+                    <dt className="visually-hidden">Biography</dt>
+                    <dd className="bio__item">{selectedMember.bio}</dd>
+                  </dl>
                 </section>
               )}
             </>
