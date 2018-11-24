@@ -95,7 +95,7 @@ export default class Tabs extends React.PureComponent {
           );
           return (
             <>
-              <div className="page-title">Diamond Dogs</div>
+              <h1 className="page-title">Diamond Dogs</h1>
               <div className="tablist">
                 {diamonddogs.map(member => (
                   <button
@@ -124,15 +124,16 @@ export default class Tabs extends React.PureComponent {
                   <img
                     className="bio-photo"
                     src={selectedMember.photo}
-                    alt=""
+                    alt={selectedMember.photoDesc}
                   />
-                  <div className="bio">
-                    <div className="bio__label">Hometown</div>
-                    <div className="bio__item">{selectedMember.hometown}</div>
-                    <div className="bio__label">Time at Vistaprint</div>
-                    <div className="bio__item">{selectedMember.employment}</div>
-                    <div className="bio__item">{selectedMember.bio}</div>
-                  </div>
+                  <dl className="bio">
+                    <dt className="bio__label">Hometown</dt>
+                    <dd className="bio__item">{selectedMember.hometown}</dd>
+                    <dt className="bio__label">Time at Vistaprint</dt>
+                    <dd className="bio__item">{selectedMember.employment}</dd>
+                    <dt className="visually-hidden">Biography</dt>
+                    <dd className="bio__item">{selectedMember.bio}</dd>
+                  </dl>
                 </section>
               )}
             </>
