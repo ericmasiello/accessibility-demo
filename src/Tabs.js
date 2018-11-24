@@ -96,10 +96,17 @@ export default class Tabs extends React.PureComponent {
           return (
             <>
               <h1 className="page-title">Diamond Dogs</h1>
-              <div className="tablist">
+              <div role="tablist" className="tablist" aria-label="Team members">
                 {diamonddogs.map(member => (
                   <button
                     key={member.id}
+                    role="tab"
+                    aria-selected={tabState.selected === member.id}
+                    aria-controls={
+                      tabState.selected === member.id
+                        ? `${selectedMember.id}_panel`
+                        : undefined
+                    }
                     tabIndex={tabState.selected !== member.id ? -1 : undefined}
                     ref={
                       tabState.selected === member.id && tabState.selectedTabRef
@@ -120,7 +127,12 @@ export default class Tabs extends React.PureComponent {
                 ))}
               </div>
               {selectedMember && (
-                <section ref={tabState.panelRef} tabIndex={0}>
+                <section
+                  ref={tabState.panelRef}
+                  tabIndex={0}
+                  role="tabpanel"
+                  aria-label={selectedMember.name}
+                >
                   <img
                     className="bio-photo"
                     src={selectedMember.photo}
