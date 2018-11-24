@@ -20,7 +20,7 @@ export default class Tabs extends React.PureComponent {
         <div className="page-title">Diamond Dogs</div>
         <div className="tablist">
           {diamonddogs.map(member => (
-            <div
+            <button
               key={member.id}
               onClick={() => {
                 this.setSelected(member.id);
@@ -33,7 +33,7 @@ export default class Tabs extends React.PureComponent {
               ])}
             >
               {member.name}
-            </div>
+            </button>
           ))}
         </div>
         {selectedMember && (
