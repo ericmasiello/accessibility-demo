@@ -4,156 +4,51 @@ import diamonddogs from './data/diamonddogs';
 import './Tabs.css';
 import './Bio.css';
 
-const KEYS = {
-  right: 39,
-  left: 37,
-  down: 40,
-};
-
-const findNext = (tabIds, selectedId) => {
-  const index = tabIds.findIndex(id => id === selectedId);
-  if (index === -1) {
-    return selectedId;
-  }
-
-  if (index === tabIds.length - 1) {
-    return tabIds[0];
-  }
-
-  return tabIds[index + 1];
-};
-
-const findPrevious = (tabIds, selectedId) => {
-  const index = tabIds.findIndex(id => id === selectedId);
-  if (index === -1) {
-    return selectedId;
-  }
-
-  if (index === 0) {
-    return tabIds[tabIds.length - 1];
-  }
-
-  return tabIds[index - 1];
-};
-
-class TabManager extends React.Component {
-  handleSetSelected = id => this.setState({ selected: id });
-  handleKeyDown = event => {
-    switch (event.which) {
-      case KEYS.right: {
-        this.setState(
-          {
-            selected: findNext(this.props.tabIds, this.state.selected),
-          },
-          () => {
-            this.state.selectedTabRef.current.focus();
-          },
-        );
-        break;
-      }
-      case KEYS.left: {
-        this.setState(
-          {
-            selected: findPrevious(this.props.tabIds, this.state.selected),
-          },
-          () => {
-            this.state.selectedTabRef.current.focus();
-          },
-        );
-        break;
-      }
-      case KEYS.down: {
-        this.state.panelRef.current.focus();
-        break;
-      }
-      default: {
-        break;
-      }
-    }
-  };
-
-  state = {
-    selected: this.props.tabIds ? this.props.tabIds[0] : null,
-    setSelected: this.handleSetSelected,
-    handleTabKeyDown: this.handleKeyDown,
-    panelRef: React.createRef(),
-    selectedTabRef: React.createRef(),
-  };
-
-  render() {
-    return this.props.children(this.state);
-  }
-}
-
 export default class Tabs extends React.PureComponent {
+  state = {
+    selected: diamonddogs.map(member => member.id)[0],
+  };
+  setSelected = id => {
+    this.setState({ selected: id });
+  };
   render() {
+    const selectedMember = diamonddogs.find(
+      member => member.id === this.state.selected,
+    );
     return (
-      <TabManager tabIds={diamonddogs.map(member => member.id)}>
-        {tabState => {
-          const selectedMember = diamonddogs.find(
-            member => member.id === tabState.selected,
-          );
-          return (
-            <>
-              <h1 className="page-title">Diamond Dogs</h1>
-              <div role="tablist" className="tablist" aria-label="Team members">
-                {diamonddogs.map(member => (
-                  <button
-                    key={member.id}
-                    id={`tab_${member.id}`}
-                    role="tab"
-                    aria-selected={tabState.selected === member.id}
-                    aria-controls={
-                      tabState.selected === member.id
-                        ? `${selectedMember.id}_panel`
-                        : undefined
-                    }
-                    tabIndex={tabState.selected !== member.id ? -1 : undefined}
-                    ref={
-                      tabState.selected === member.id && tabState.selectedTabRef
-                    }
-                    onKeyDown={tabState.handleTabKeyDown}
-                    onClick={() => {
-                      tabState.setSelected(member.id);
-                    }}
-                    className={classNames([
-                      'tab',
-                      {
-                        'tab--selected': tabState.selected === member.id,
-                      },
-                    ])}
-                  >
-                    {member.name}
-                  </button>
-                ))}
-              </div>
-              {selectedMember && (
-                <section
-                  ref={tabState.panelRef}
-                  role="tabpanel"
-                  tabIndex={0}
-                  id={`${selectedMember.id}_panel`}
-                  aria-label={selectedMember.name}
-                >
-                  <img
-                    className="bio-photo"
-                    src={selectedMember.photo}
-                    alt={selectedMember.photoDesc}
-                  />
-                  <dl className="bio">
-                    <dt className="bio__label">Hometown</dt>
-                    <dd className="bio__item">{selectedMember.hometown}</dd>
-                    <dt className="bio__label">Time at Vistaprint</dt>
-                    <dd className="bio__item">{selectedMember.employment}</dd>
-                    <dt className="visually-hidden">Biography</dt>
-                    <dd className="bio__item">{selectedMember.bio}</dd>
-                  </dl>
-                </section>
-              )}
-            </>
-          );
-        }}
-      </TabManager>
+      <>
+        <div className="page-title">Diamond Dogs</div>
+        <div className="tablist">
+          {diamonddogs.map(member => (
+            <div
+              key={member.id}
+              onClick={() => {
+                this.setSelected(member.id);
+              }}
+              className={classNames([
+                'tab',
+                {
+                  'tab--selected': this.state.selected === member.id,
+                },
+              ])}
+            >
+              {member.name}
+            </div>
+          ))}
+        </div>
+        {selectedMember && (
+          <section>
+            <img className="bio-photo" src={selectedMember.photo} alt="" />
+            <div className="bio">
+              <div className="bio__label">Hometown</div>
+              <div className="bio__item">{selectedMember.hometown}</div>
+              <div className="bio__label">Time at Vistaprint</div>
+              <div className="bio__item">{selectedMember.employment}</div>
+              <div className="bio__item">{selectedMember.bio}</div>
+            </div>
+          </section>
+        )}
+      </>
     );
   }
 }
