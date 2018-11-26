@@ -103,9 +103,7 @@ export default class Tabs extends React.PureComponent {
                     role="tab"
                     aria-selected={tabState.selected === member.id}
                     aria-controls={
-                      tabState.selected === member.id
-                        ? `${selectedMember.id}_panel`
-                        : undefined
+                      tabState.selected === member.id ? 'tab-panel' : undefined
                     }
                     tabIndex={tabState.selected !== member.id ? -1 : undefined}
                     ref={
@@ -129,6 +127,7 @@ export default class Tabs extends React.PureComponent {
               {selectedMember && (
                 <section
                   ref={tabState.panelRef}
+                  id="tab-panel"
                   tabIndex={0}
                   role="tabpanel"
                   aria-label={selectedMember.name}
