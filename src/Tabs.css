@@ -27,3 +27,9 @@
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
+
+/* done for demo purposes only so screen reader doesn't spoil the UI */
+.App--overlay .tablist,
+.App--overlay .tab {
+  display: block;
+}

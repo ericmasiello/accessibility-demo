@@ -3,6 +3,33 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.App {
+  position: relative;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay__button {
+  padding: 10px 16px;
+  background-color: #fff;
+  border: 1px solid #888;
+  font-weight: 600;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
 img {
   max-width: 100%;
 }
